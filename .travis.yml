@@ -1,6 +1,6 @@
 language: java
 jdk:
 - oraclejdk8
-post-script:
+post_script:
   - gradle jacocoTestReport
   - bash <(curl -s https://codecov.io/bash)
