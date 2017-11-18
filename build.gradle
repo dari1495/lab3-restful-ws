@@ -5,6 +5,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'jacoco'
 
 repositories {
 	mavenCentral()
@@ -27,4 +28,11 @@ task server(type: JavaExec) {
     description 	= 'Start a REST endpoint'
     main 			= 'rest.addressbook.Server'
 	classpath 		= sourceSets.main.runtimeClasspath
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
 }
